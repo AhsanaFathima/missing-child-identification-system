@@ -1,0 +1,35 @@
+<html>
+    <body style="background-color:lightblue;"><center><br><br><br> <h1><U><B>CHILD DETAILS</B></U></h1><br><br><br><br><br><br>
+        <table border="3" width="1300px">
+            <tr>
+                <th> Sl.no </th>
+                <th> Name </th>
+                <th> Place </th>
+                <th> Height </th>
+                <th> Weight </th>
+                <th> Age </th>
+                <th> Hair colour </th>
+                <th> Eye colour </th>
+                <th> Image </th>
+                 </tr>
+                 {% for i in cr %}
+                 <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.place}}</td>
+                    <td>{{i.height}}</td>
+                    <td>{{i.weight}}</td>
+                    <td>{{i.age}}</td>
+                    <td>{{i.hair_colour}}</td>
+                    <td>{{i.eye_colour}}</td>
+                    {% if i.upload_image %}
+                    <td><img src="{{i.upload_image.url}}"  width="40px" height="40px"></td>
+                    {% endif %}
+                
+                 </tr>
+                 {% endfor %}
+        </table><br><br><br>
+        <a href="/policedash">Back</a>
+    </center>
+    </body>
+    </html>
